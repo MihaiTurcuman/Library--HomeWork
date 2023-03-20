@@ -45,7 +45,9 @@ public class App
 
         myLibrary.listAllBooks();
 
+        myLibrary.deleteBook ((secondBook));
 
+        myLibrary.listAllBooks();
     }
 
 }

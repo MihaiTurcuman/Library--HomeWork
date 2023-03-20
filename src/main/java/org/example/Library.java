@@ -1,37 +1,41 @@
 package org.example;
 
 import java.awt.print.Book;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Library extends Object {
 
-    public Book book1;
-    public Book book2;
-    public Book book3;
+   public List<Book> books = new ArrayList<> ();
 
-    public void addBook(Book book) {
-        if (book1 == null) {
-            this.book1 = book;
-            return;
-        }
-        if (book2 == null) {
-            this.book2 = book;
-            return;
-        }
-        if (book3 == null) {
-            this.book3 = book;
-            return;
-        }
-        System.out.println ("Library is full");
-    }
+   public void addBook(Book book) {
+       if (books.size() >=4) {
+           System.out.println ("Library is full");
+           return;
+       }
+       books.add(book);
+   }
 
-    public void listAllBooks() {
-        System.out.println ("book1: " + book1);
-        System.out.println ("book2: " + book2);
-        System.out.println ("book3: " + book3);
-    }
+   public void listAllBooks() {
 
+       for (Book book : books) {
+           System.out.println(book);
+       }
+   }
+
+   public void deleteBook(Book book){
+     if (books.contains(book)) {
+         System.out.println("Book does not exist");
+     }
+
+       System.out.println("Deleting book" + book);
+       books.remove(book);
 
 
+  }
 }
+
+
+
 
 
